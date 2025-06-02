@@ -1,3 +1,7 @@
+<?php
+session_start();
+$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,27 +65,11 @@
                     </button>
                     <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                         <div class="navbar-nav mx-auto">
-                            <a href="index.html" class="nav-item nav-link">Home</a>
-                            <a href="shop.html" class="nav-item nav-link">Shop</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
-                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                    <a href="cart.html" class="dropdown-item active">Cart</a>
-                                    <a href="chackout.html" class="dropdown-item">Chackout</a>
-                                </div>
-                            </div>
+                            <a href="index.php" class="nav-item nav-link">Home</a>
+
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
                         </div>
-                        <div class="d-flex m-3 me-0">
-                            <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
-                            <a href="#" class="position-relative me-4 my-auto">
-                                <i class="fa fa-shopping-bag fa-2x"></i>
-                                <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
-                            </a>
-                            <a href="#" class="my-auto">
-                                <i class="fas fa-user fa-2x"></i>
-                            </a>
-                        </div>
+
                     </div>
                 </nav>
             </div>
@@ -90,22 +78,7 @@
 
 
         <!-- Modal Search Start -->
-        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body d-flex align-items-center">
-                        <div class="input-group w-75 mx-auto d-flex">
-                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                            <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <!-- Modal Search End -->
 
 
@@ -127,125 +100,48 @@
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
-                          <tr>
-                            <th scope="col">Products</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Total</th>
-                            <th scope="col">Handle</th>
-                          </tr>
+                            <tr>
+                                <th scope="col">Products</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Remove</th>
+                            </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">
-                                    <div class="d-flex align-items-center">
-                                        <img src="img/vegetable-item-3.png" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="">
-                                    </div>
-                                </th>
-                                <td>
-                                    <p class="mb-0 mt-4">Big Banana</p>
-                                </td>
-                                <td>
-                                    <p class="mb-0 mt-4">2.99 $</p>
-                                </td>
-                                <td>
-                                    <div class="input-group quantity mt-4" style="width: 100px;">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-minus rounded-circle bg-light border" >
-                                            <i class="fa fa-minus"></i>
-                                            </button>
-                                        </div>
-                                        <input type="text" class="form-control form-control-sm text-center border-0" value="1">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-plus rounded-circle bg-light border">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="mb-0 mt-4">2.99 $</p>
-                                </td>
-                                <td>
-                                    <button class="btn btn-md rounded-circle bg-light border mt-4" >
-                                        <i class="fa fa-times text-danger"></i>
-                                    </button>
-                                </td>
-                            
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    <div class="d-flex align-items-center">
-                                        <img src="img/vegetable-item-5.jpg" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="" alt="">
-                                    </div>
-                                </th>
-                                <td>
-                                    <p class="mb-0 mt-4">Potatoes</p>
-                                </td>
-                                <td>
-                                    <p class="mb-0 mt-4">2.99 $</p>
-                                </td>
-                                <td>
-                                    <div class="input-group quantity mt-4" style="width: 100px;">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-minus rounded-circle bg-light border" >
-                                            <i class="fa fa-minus"></i>
-                                            </button>
-                                        </div>
-                                        <input type="text" class="form-control form-control-sm text-center border-0" value="1">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-plus rounded-circle bg-light border">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="mb-0 mt-4">2.99 $</p>
-                                </td>
-                                <td>
-                                    <button class="btn btn-md rounded-circle bg-light border mt-4" >
-                                        <i class="fa fa-times text-danger"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    <div class="d-flex align-items-center">
-                                        <img src="img/vegetable-item-2.jpg" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="" alt="">
-                                    </div>
-                                </th>
-                                <td>
-                                    <p class="mb-0 mt-4">Awesome Brocoli</p>
-                                </td>
-                                <td>
-                                    <p class="mb-0 mt-4">2.99 $</p>
-                                </td>
-                                <td>
-                                    <div class="input-group quantity mt-4" style="width: 100px;">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-minus rounded-circle bg-light border" >
-                                            <i class="fa fa-minus"></i>
-                                            </button>
-                                        </div>
-                                        <input type="text" class="form-control form-control-sm text-center border-0" value="1">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-sm btn-plus rounded-circle bg-light border">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="mb-0 mt-4">2.99 $</p>
-                                </td>
-                                <td>
-                                    <button class="btn btn-md rounded-circle bg-light border mt-4" >
-                                        <i class="fa fa-times text-danger"></i>
-                                    </button>
-                                </td>
-                            </tr>
+                        <tbody id="cart-items">
+                            <?php if (empty($cart)): ?>
+                                <tr>
+                                    <td colspan="5" class="text-center">Your cart is empty.</td>
+                                </tr>
+                            <?php else: ?>
+                                <?php foreach ($cart as $item): ?>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="<?php echo htmlspecialchars($item['image']); ?>" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p class="mb-0 mt-4"><?php echo htmlspecialchars($item['name']); ?></p>
+                                        </td>
+                                        <td>
+                                            <p class="mb-0 mt-4"><?php echo htmlspecialchars($item['price']); ?> $</p>
+                                        </td>
+                                        <td>
+                                            <div class="input-group quantity mt-4" style="width: 100px;">
+                                                <input type="text" class="form-control form-control-sm text-center border-0" value="<?php echo htmlspecialchars($item['qty']); ?>" readonly>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p class="mb-0 mt-4"><?php echo number_format($item['price'] * $item['qty'], 2); ?> $</p>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger btn-sm btn-remove" data-idx="<?php echo htmlspecialchars($item['id']); ?>">&times;</button>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
@@ -261,21 +157,20 @@
                                 <h1 class="display-6 mb-4">Cart <span class="fw-normal">Total</span></h1>
                                 <div class="d-flex justify-content-between mb-4">
                                     <h5 class="mb-0 me-4">Subtotal:</h5>
-                                    <p class="mb-0">$96.00</p>
+                                    <p class="mb-0" id="cart-subtotal">₹0.00</p>
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <h5 class="mb-0 me-4">Shipping</h5>
                                     <div class="">
-                                        <p class="mb-0">Flat rate: $3.00</p>
+                                        <p class="mb-0">Flat rate: ₹50.00</p>
                                     </div>
                                 </div>
-                                <p class="mb-0 text-end">Shipping to Ukraine.</p>
                             </div>
                             <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
                                 <h5 class="mb-0 ps-4 me-4">Total</h5>
-                                <p class="mb-0 pe-4">$99.00</p>
+                                <p class="mb-0 pe-4" id="cart-total">₹0.00</p>
                             </div>
-                            <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" type="button">Proceed Checkout</button>
+                            <button id="proceedCheckout" class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" type="button">Proceed Checkout</button>
                         </div>
                     </div>
                 </div>
@@ -391,6 +286,86 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+function renderCart() {
+    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    let tbody = document.getElementById('cart-items');
+    tbody.innerHTML = '';
+    let subtotal = 0;
+    if (cart.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="text-center">Your cart is empty.</td></tr>';
+        document.getElementById('cart-subtotal').textContent = '₹0.00';
+        document.getElementById('cart-total').textContent = '₹0.00';
+        return;
+    }
+    cart.forEach((item, idx) => {
+        let itemTotal = item.price * item.qty;
+        subtotal += itemTotal;
+        let tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td><img src="${item.image}" style="width:80px;height:80px;" class="img-fluid rounded-circle"></td>
+            <td>${item.name}</td>
+            <td>₹${item.price}</td>
+            <td>
+                <div class="input-group" style="width:120px;">
+                    <button class="btn btn-sm btn-minus" data-idx="${idx}">-</button>
+                    <input type="text" class="form-control form-control-sm text-center border-0" value="${item.qty}" readonly>
+                    <button class="btn btn-sm btn-plus" data-idx="${idx}">+</button>
+                </div>
+            </td>
+            <td>₹${itemTotal.toFixed(2)}</td>
+            <td>
+                <button class="btn btn-danger btn-sm btn-remove" data-idx="${idx}">&times;</button>
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+
+    // Update subtotal and total (shipping is ₹50.00)
+    document.getElementById('cart-subtotal').textContent = '₹' + subtotal.toFixed(2);
+    let shipping = cart.length > 0 ? 50 : 0;
+    document.getElementById('cart-total').textContent = '₹' + (subtotal + shipping).toFixed(2);
+
+    // Add event listeners for +, -, and remove
+    tbody.querySelectorAll('.btn-plus').forEach(btn => {
+        btn.onclick = function() {
+            let idx = parseInt(this.getAttribute('data-idx'));
+            cart[idx].qty += 1;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        };
+    });
+    tbody.querySelectorAll('.btn-minus').forEach(btn => {
+        btn.onclick = function() {
+            let idx = parseInt(this.getAttribute('data-idx'));
+            if (cart[idx].qty > 1) {
+                cart[idx].qty -= 1;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                renderCart();
+            }
+        };
+    });
+    tbody.querySelectorAll('.btn-remove').forEach(btn => {
+        btn.onclick = function() {
+            let idx = parseInt(this.getAttribute('data-idx'));
+            cart.splice(idx, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        };
+    });
+}
+renderCart();
+document.getElementById('proceedCheckout').onclick = function() {
+    window.location.href = 'chackout.html';
+};
+fetch('save_order_items.php', {
+  method: 'POST',
+  body: new URLSearchParams({
+    order_id: 123,
+    cart_data: localStorage.getItem('cart')
+  })
+});
+    </script>
     </body>
 
 </html>

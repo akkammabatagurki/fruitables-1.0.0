@@ -142,6 +142,8 @@ window.onload=startclock;
 			<li><a href="supplier.php"><i class="icon-group icon-2x"></i> Suppliers</a>                                    </li>
 			<li><a href="salesreport.php?d1=0&d2=0"><i class="icon-bar-chart icon-2x"></i> Sales Report</a></li>
 			<li><a href="contacts.php"><i class="icon-envelope icon-2x"></i> Contacts</a></li>
+			  <li class="active"><a href="orders.php"><i class="icon-list-alt icon-2x"></i> Orders</a></li>
+          <li><a href="orderitem.php"><i class="icon-list-alt icon-2x"></i> Order Items</a></li>
 			<br><br><br><br><br><br>		
 			<li>
 			 <div class="hero-unit-clock">
@@ -192,7 +194,11 @@ window.onload=startclock;
 
 
 <input type="text" style="padding:15px;" name="filter" value="" id="filter" placeholder="Search Product..." autocomplete="off" />
-<a rel="facebox" href="addproduct.php"><Button type="submit" class="btn btn-info" style="float:right; width:230px; height:35px;" /><i class="icon-plus-sign icon-large"></i> Add Product</button></a><br><br>
+<a rel="facebox" href="addproduct.php">
+  <button type="button" class="btn btn-info" style="float:right; width:230px; height:35px;">
+    <i class="icon-plus-sign icon-large"></i> Add Product
+  </button>
+</a><br><br>
 <table class="hoverTable" id="resultTable" data-responsive="table" style="text-align: left;">
 	<thead>
 		<tr>

@@ -109,9 +109,11 @@ if($position=='admin') {
 			<li><a href="products.php"><i class="icon-list-alt icon-2x"></i> Products</a>                                     </li>
 			<li><a href="customer.php"><i class="icon-group icon-2x"></i> Customers</a>                                    </li>
 			<li><a href="supplier.php"><i class="icon-group icon-2x"></i> Suppliers</a>                                    </li>
-			<li><a href="salesreport.php?d1=0&d2=0"><i class="icon-bar-chart icon-2x"></i> Sales Report</a></li>
 			<li><a href="contacts.php"><i class="icon-envelope icon-2x"></i> Contacts</a></li>
-			<br><br><br><br><br><br>		
+			<li><a href="display_reg.php"><i class="icon-user icon-2x"></i> Users</a></li>
+			<li><a href="orders.php"><i class="icon-list-alt icon-2x"></i> Orders</a></li>
+			<li><a href="orderitem.php"><i class="icon-list-alt icon-2x"></i> Order Items</a></li>
+<br><br><br><br><br><br>		
 			<li>
 			 <div class="hero-unit-clock">
 		
@@ -139,8 +141,8 @@ if($position=='admin') {
 <a href="products.php"><i class="icon-list-alt icon-2x"></i><br> Products</a>      
 <a href="customer.php"><i class="icon-group icon-2x"></i><br> Customers</a>     
 <a href="supplier.php"><i class="icon-group icon-2x"></i><br> Suppliers</a>     
-<a href="salesreport.php?d1=0&d2=0"><i class="icon-bar-chart icon-2x"></i><br> Sales Report</a>
 <a href="contacts.php"><i class="icon-envelope icon-2x"></i><br> Contacts</a>
+<a href="display_reg.php"><i class="icon-user icon-2x"></i><br> Users</a>
 <a href="../index.php"><font color="red"><i class="icon-off icon-2x"></i></font><br> Logout</a> 
 
 <div class="clearfix"></div>
